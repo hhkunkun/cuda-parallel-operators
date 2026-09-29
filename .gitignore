@@ -1,0 +1,11 @@
+build/
+bin/
+*.exe
+*.o
+*.obj
+*.nsys-rep
+*.ncu-rep
+*.qdrep
+*.sqlite
+.vscode/
+
