@@ -69,30 +69,29 @@ cmake --build build -j
 不同 GPU 的性能数据会不同：
 
 ```text
-CUDA Parallel Operators
-GPU: NVIDIA GeForce RTX xxxx
+GPU: NVIDIA GeForce RTX 2080 Ti
 
 [Vector Add]
   Elements: 1048576
-  Block 128: ... ms, ... GB/s
-  Block 256: ... ms, ... GB/s
-  Block 512: ... ms, ... GB/s
-  Correct:  yes
-  Selected 256-thread time: ... ms
+  Block 128: 0.025 ms, 497.251 GB/s
+  Block 256: 0.025 ms, 501.858 GB/s
+  Block 512: 0.025 ms, 499.912 GB/s
+  Correct: yes
+  Selected 256-thread time: 0.025 ms
 
 [Matrix Add]
   Shape:   1024 x 1024
   Correct: yes
-  Kernel:  ... ms
+  Kernel:  0.025 ms
 
 [Tiled Matrix Multiply]
   Shape:       256 x 256 x 256
   Tile size:   16 x 16
   Correct:     yes
-  CPU time:    ... ms
-  GPU kernel:  ... ms
-  Kernel speedup: ...x
-  Throughput:  ... GFLOP/s
+  CPU time:    3.056 ms
+  GPU kernel:  0.032 ms
+  Kernel speedup: 94.634x
+  Throughput:  1039.120 GFLOP/s
 ```
 
 `Kernel speedup` 只比较 CPU 计算时间与 GPU 内核时间，不包含主机和设备之间的数据传输，因此不能代表完整应用的端到端加速比。
